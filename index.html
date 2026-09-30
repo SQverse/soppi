@@ -245,12 +245,40 @@ footer .script{font-size:20px;color:var(--gold)}
   .menu.open{max-height:400px;padding:8px 24px 20px;}
   .menu a{padding:14px 0;border-bottom:1px solid var(--line)}
   .nav .order{display:none}
-  .hero{min-height:auto;align-items:flex-end;height:auto;padding-bottom:40px}
-  .hero-img{width:100%;height:58%}
-  .hero::before{background:linear-gradient(0deg,#1a100a 0%,#1a100a 48%,rgba(26,16,10,.3) 70%,rgba(26,16,10,.1) 100%)}
-  .hero .wrap{padding-top:300px}
-  .badge{width:120px;height:120px;right:16px;top:110px;bottom:auto}
-  .badge b{font-size:16px}.badge span{font-size:13px}
+  
+  /* PERBAIKAN HERO HP AGAR PAS 1 LAYAR */
+  .hero{
+    height: 100vh;
+    height: 100dvh; /* Tinggi pas 1 layar, menyesuaikan address bar */
+    min-height: 600px;
+    align-items: flex-end; /* Dorong konten teks ke bawah */
+    padding-bottom: 0;
+  }
+  .hero-img{
+    width: 100%;
+    height: 65%; /* Gambar mendominasi 65% atas layar */
+    top: 0;
+  }
+  .hero::before{
+    /* Gradient yang menyatu mulus agar teks putih terlihat jelas */
+    background: linear-gradient(0deg, #1a100a 0%, #1a100a 45%, rgba(26,16,10,.6) 70%, rgba(26,16,10,0) 100%);
+  }
+  .hero::after{ display: none; }
+  .hero .wrap{
+    padding-top: 80px; 
+    padding-bottom: 100px; /* Sisakan ruang agar teks/tombol tidak tertutup FAB (tombol melayang) */
+    width: 100%;
+  }
+  .badge{
+    width: 110px;
+    height: 110px;
+    right: 20px;
+    top: 100px;
+    bottom: auto;
+  }
+  .badge b{font-size:14px}
+  .badge span{font-size:12px; margin-top:4px}
+  
   .about{flex-direction:column;align-items:stretch}
   .about-img{position:relative;width:100%;height:280px;order:2}
   .about::before{display:none}
@@ -262,6 +290,14 @@ footer .script{font-size:20px;color:var(--gold)}
 }
 @media (max-width:600px){
   section.block{padding:70px 0}
+  
+  /* PENYESUAIAN UKURAN FONT AGAR FIT DI LAYAR KECIL */
+  .hero h1{font-size:56px; transform:rotate(-3deg)}
+  .hero .sub{font-size:24px; transform:rotate(-3deg)}
+  .hero .tag{font-size:22px; margin-top:12px}
+  .hero p{font-size:14px; margin-top:12px; margin-bottom:20px; line-height:1.5}
+  .hero .ctas{margin-top:16px; gap:12px}
+  
   .menu-grid{grid-template-columns:1fr 1fr;gap:14px}
   .dish .body{padding:14px}
   .dish h3{font-size:16px}.dish .price{font-size:16px}.dish p{font-size:13px}
@@ -271,6 +307,8 @@ footer .script{font-size:20px;color:var(--gold)}
   #lokasi{grid-template-columns:1fr}
   .loc-map,.loc-map iframe{min-height:280px}
   .gallery{grid-template-columns:1fr 1fr}
+  
+  /* Ukuran tombol floating agak dikecilkan untuk space lega di HP */
   .btn-float { width: 50px; height: 50px; }
   .audio-float svg, .wa-float svg { width: 20px; height: 20px; }
   .float-container { bottom: 16px; }
@@ -350,15 +388,15 @@ footer .script{font-size:20px;color:var(--gold)}
       <h2>Pilihan Menu Lezat <span>Soppi</span></h2>
     </div>
     <div class="menu-grid">
-      <article class="dish"><figure><img src="images/menu-iga-buntut.png" alt="Sop Iga Sapi" loading="lazy"><span class="fav">MENU FAVORIT</span></figure>
+      <article class="dish"><figure><img src="images/menu-iga-buntut.webp" alt="Sop Iga Sapi" loading="lazy"><span class="fav">MENU FAVORIT</span></figure>
         <div class="body"><h3>Sop Iga Sapi</h3><div class="price">Rp 27.500</div><p>Iga sapi empuk dengan kuah kaldu gurih dan rempah pilihan.</p></div></article>
-      <article class="dish"><figure><img src="images/menu-iga-buntut.png" alt="Sop Iga Premium" loading="lazy"></figure>
+      <article class="dish"><figure><img src="images/menu-iga-buntut.webp" alt="Sop Iga Premium" loading="lazy"></figure>
         <div class="body"><h3>Sop Iga Premium</h3><div class="price">Rp 44.000</div><p>Porsi lebih besar, iga lebih banyak, rasa lebih istimewa.</p></div></article>
-      <article class="dish"><figure><img src="images/menu-iga-bakar-premium.png" alt="Iga Bakar" loading="lazy"></figure>
+      <article class="dish"><figure><img src="images/menu-iga-bakar-premium.webp" alt="Iga Bakar" loading="lazy"></figure>
         <div class="body"><h3>Iga Bakar</h3><div class="price">Rp 27.500</div><p>Iga sapi bakar dengan bumbu spesial meresap sempurna.</p></div></article>
-      <article class="dish"><figure><img src="images/menu-iga-bakar-premium.png" alt="Iga Bakar Premium" loading="lazy"></figure>
+      <article class="dish"><figure><img src="images/menu-iga-bakar-premium.webp" alt="Iga Bakar Premium" loading="lazy"></figure>
         <div class="body"><h3>Iga Bakar Premium</h3><div class="price">Rp 50.000</div><p>Iga bakar premium dengan ukuran besar dan rasa terbaik.</p></div></article>
-      <article class="dish"><figure><img src="images/menu-iga-buntut.png" alt="Iga Buntut Premium" loading="lazy"></figure>
+      <article class="dish"><figure><img src="images/menu-iga-buntut.webp" alt="Iga Buntut Premium" loading="lazy"></figure>
         <div class="body"><h3>Iga Buntut Premium</h3><div class="price">Rp 44.000</div><p>Buntut sapi empuk dengan kuah gurih kaya rempah.</p></div></article>
     </div>
     <div class="menu-more">
@@ -368,7 +406,7 @@ footer .script{font-size:20px;color:var(--gold)}
 </section>
 
 <section class="about" id="tentang">
-  <img class="about-img" src="images/tampak-depan.png" alt="Tampak depan rumah makan Soppi di malam hari" loading="lazy">
+  <img class="about-img" src="images/tampak-depan.webp" alt="Tampak depan rumah makan Soppi di malam hari" loading="lazy">
   <div class="wrap">
     <div class="about-text">
       <div class="eyebrow">Tentang Soppi</div>
@@ -387,12 +425,12 @@ footer .script{font-size:20px;color:var(--gold)}
       <a class="btn btn-ghost" href="https://instagram.com/soppi.ungaran" target="_blank" rel="noopener">Foto lainnya di Instagram</a>
     </div>
     <div class="gallery">
-      <button type="button"><img src="images/galeri-1.jpg" alt="Suasana ruang makan Soppi" loading="lazy"></button>
-      <button type="button"><img src="images/menu-iga-buntut.png" alt="Sop iga sapi" loading="lazy"></button>
-      <button type="button"><img src="images/menu-iga-bakar-premium.png" alt="Iga bakar" loading="lazy"></button>
-      <button type="button"><img src="images/galeri-4.jpg" alt="Meja makan Soppi" loading="lazy"></button>
-      <button type="button"><img src="images/galeri-5.jpg" alt="Sendok kuah sop iga" loading="lazy"></button>
-      <button type="button"><img src="images/tampak-depan.png" alt="Tampak depan Soppi" loading="lazy"></button>
+      <button type="button"><img src="images/galeri-1.webp" alt="Suasana ruang makan Soppi" loading="lazy"></button>
+      <button type="button"><img src="images/menu-iga-buntut.webp" alt="Sop iga sapi" loading="lazy"></button>
+      <button type="button"><img src="images/menu-iga-bakar-premium.webp" alt="Iga bakar" loading="lazy"></button>
+      <button type="button"><img src="images/hero-sop-iga.webp" alt="Meja makan Soppi" loading="lazy"></button>
+      <button type="button"><img src="images/menu-iga-buntut.webp" alt="Sendok kuah sop iga" loading="lazy"></button>
+      <button type="button"><img src="images/tampak-depan.webp" alt="Tampak depan Soppi" loading="lazy"></button>
     </div>
   </div>
 </section>
